@@ -2,10 +2,14 @@ const express=require("express")
 const mongoose=require("mongoose")
 const connection=require("./config/db")
 const route=require("./route/user.route")
+const cors=require("cors")
 require("dotenv").config()
 const PORT=process.env.PORT
 const app=express()
 app.use(express.json())
+app.use(cors({
+    origin:'*'
+}))
 app.use
 app.use("/user",route)
 app.get("/",(req,res)=>{
