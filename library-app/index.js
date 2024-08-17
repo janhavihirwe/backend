@@ -8,6 +8,9 @@ const app=express()
 app.use(express.json())
 app.use
 app.use("/user",route)
+app.get("/",(req,res)=>{
+    return res.send("This is home page")
+})
 app.listen(PORT,async()=>{
     try{
         await connection
